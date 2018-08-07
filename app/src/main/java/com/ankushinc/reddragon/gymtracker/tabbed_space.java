@@ -21,22 +21,32 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
 public class tabbed_space extends AppCompatActivity {
     public ViewPager viewPager;
     private static final String TAG = "tabbed_space";
     private SectionsPageAdapter mSectionsPageAdapter;
     private Toolbar toolbar;
 
-
+   AdView mAdview;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tabbed_space);
         Log.d(TAG, "onCreate: Starting");
 
+        MobileAds.initialize(this,"ca-app-pub-3847635009923151~7567979933");
+
+        mAdview=(AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdview.loadAd(adRequest);
 
 
-       SharedPreferences prefs =getSharedPreferences("prefs",MODE_PRIVATE);
+
+        SharedPreferences prefs =getSharedPreferences("prefs",MODE_PRIVATE);
        boolean firstStart=prefs.getBoolean("firstStart",true);
 
        if(firstStart){

@@ -25,11 +25,7 @@ public class Tab1_TabbedSpace extends Fragment {
     View view=inflater.inflate(R.layout.tab1_fragment,container,false);
 
 
-        MobileAds.initialize(getActivity(),"ca-app-pub-3847635009923151~7567979933");
 
-        mAdview=(AdView) view.findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdview.loadAd(adRequest);
 
         return view;
     }
