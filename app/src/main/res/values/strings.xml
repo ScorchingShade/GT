@@ -7,4 +7,16 @@
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="name">Ankush Sharma</string>
     <string name="banner_ad_unit_id">ca-app-pub-3847635009923151/3840487916</string>
+    <string name="cover_image">Cover_Image</string>
+    <string name="settings_name">Name</string>
+    <string name="settings_age">Age</string>
+    <string name="settings_height">Height in feet (e.g 5.4)</string>
+    <string name="settings_weight">Weight in Kgs (e.g. 60)</string>
+    
+    
+    <string-array name="Gender">
+        <item>Male</item>
+        <item>Female</item>
+
+    </string-array>
 </resources>
