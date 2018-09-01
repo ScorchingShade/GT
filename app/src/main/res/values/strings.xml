@@ -12,11 +12,20 @@
     <string name="settings_age">Age</string>
     <string name="settings_height">Height in feet (e.g 5.4)</string>
     <string name="settings_weight">Weight in Kgs (e.g. 60)</string>
-    
-    
+    <string name="settings_goal">Days for Goal</string>
+    <string name="facebook_app_id">2006314379431470</string>
+    <string name="fb_login_protocol_scheme">fb2006314379431470</string>
+
+
     <string-array name="Gender">
         <item>Male</item>
         <item>Female</item>
 
+    </string-array>
+
+    <string-array name="workout">
+        <item>Normal exercise</item>
+        <item>Moderate workout</item>
+        <item>Intense Gymming</item>
     </string-array>
 </resources>
