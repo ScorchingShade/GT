@@ -1,5 +1,6 @@
 package com.ankushinc.reddragon.gymtracker;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.facebook.login.widget.LoginButton;
@@ -23,6 +25,8 @@ public class LoginActivity extends AppCompatActivity {
     AutoCompleteTextView email;
     EditText password;
     Button sign_in;
+    ProgressBar progressBar;
+    ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,6 +66,10 @@ public class LoginActivity extends AppCompatActivity {
         String Email=email.getText().toString().trim();
         String Password=password.getText().toString().trim();
 
+       progressDialog=new ProgressDialog(LoginActivity.this);
+
+        progressDialog.setMessage("Logging in Please Wait...");
+        progressDialog.show();
 
         mAuth.signInWithEmailAndPassword(Email, Password)
                 .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
@@ -77,7 +85,7 @@ public class LoginActivity extends AppCompatActivity {
                                     Toast.LENGTH_SHORT).show();
                             updateUI(null);
                         }
-
+                        progressDialog.dismiss();
                         // ...
                     }
                 });
